@@ -18,9 +18,8 @@ views = input("> Enter Amount Of Views: ")
 delay = int(input("> Enter Watchtime: "))
 
 count = 0
+siddharth3 = webdriver.Chrome(executable_path="chromedriver.exe")
 
-opts = uc.ChromeOptions()
-driver = uc.Chrome(options=opts)
 for i in range(views): 
     os.system(f"title View Bot V1 ^| Success: {str(count)}")
     siddharth3.get("https://youtu.be/OU69JaZ1FQo")
