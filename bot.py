@@ -28,7 +28,7 @@ os.system("cls")
 url = input("> Enter Video URL: ")
 count = input("> Enter View Count: ")
 
-delay = input("> Enter Watch Time (seconds): ")
+delay = int(input("> Enter Watch Time (seconds): "))
 
 
 while count == count:
