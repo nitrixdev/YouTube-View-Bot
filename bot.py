@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import time, os
 from colorama import Fore, Back, Style
 
@@ -13,19 +15,36 @@ print(f"""{Fore.RED}
 
 os.system("title View Bot V1 ^| Success: 0")
 
-url = input("> Enter Video Link: ")
-views = input("> Enter Amount Of Views: ")
-delay = int(input("> Enter Watchtime: "))
+URL = input("> Enter Video Link: ")
 
 count = 0
-siddharth3 = webdriver.Chrome(executable_path="chromedriver.exe")
 
-for i in range(views): 
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+DRIVERS = 5
+driver = []
+BreakRate = 10 #sec
+PATH = 'chromedriver.exe' #path of chromedriver
+
+for i in range(DRIVERS):
+    driver.append(webdriver.Chrome(PATH))
+    driver.minimize_window()  
+    driver[i].get(URL)
+    action = ActionChains(driver[i])
+    action.send_keys(Keys.SPACE)
+    action.perform()
     os.system(f"title View Bot V1 ^| Success: {str(count)}")
-    siddharth3.get("https://youtu.be/OU69JaZ1FQo")
-    time.sleep(delay)
-    siddharth3.refresh()
-    print(f"{Fore.GREEN}Sent view!")
-    count += 1
-    
-print(f"{Fore.YELLOW}Done!")
+        
+while True:
+    time.sleep(BreakRate)
+    for j in range(DRIVERS):
+        driver.minimize_window() 
+        driver[j].refresh()
+        action = ActionChains(driver[j])
+        action.send_keys(Keys.SPACE)
+        action.perform()
+        count += 1
+        os.system(f"title View Bot V1 ^| Success: {str(count)}")
