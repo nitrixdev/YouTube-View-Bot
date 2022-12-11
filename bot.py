@@ -30,11 +30,13 @@ count = input("> Enter View Count: ")
 
 delay = int(input("> Enter Watch Time (seconds): "))
 
+driver = webdriver.Chrome(PATH)
+
 
 while count == count:
-    driver = webdriver.Chrome(PATH)
     driver.minimize_window()
     os.system(f"title Youtube View Bot ^| Views: {amount} ^| Errors: {error}")
     driver.get(url)
     time.sleep(delay)
     amount += 1
+    driver.refresh()
