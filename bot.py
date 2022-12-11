@@ -32,7 +32,7 @@ PATH = 'chromedriver.exe' #path of chromedriver
 
 for i in range(DRIVERS):
     driver.append(webdriver.Chrome(PATH))
-    driver.minimize_window()  
+    driver[i].minimize_window()  
     driver[i].get(URL)
     action = ActionChains(driver[i])
     action.send_keys(Keys.SPACE)
@@ -42,7 +42,7 @@ for i in range(DRIVERS):
 while True:
     time.sleep(BreakRate)
     for j in range(DRIVERS):
-        driver.minimize_window() 
+        driver[j].minimize_window() 
         driver[j].refresh()
         action = ActionChains(driver[j])
         action.send_keys(Keys.SPACE)
