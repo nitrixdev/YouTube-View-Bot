@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-import time, os
+import time, os, webbrowser
 from colorama import Fore, Back, Style
 
-os.system("start https://discord.gg/45u5Amnpqp")
+webbrowser.open("https://discord.gg/45u5Amnpqp")
 
 print(f"""{Fore.RED}
         _               _           _   
