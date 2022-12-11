@@ -1,42 +1,35 @@
-from selenium import webdriver
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
-import os
-import random
-import string
-import colorama
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.chrome.options import Options
-import threading, requests, ctypes, os, time, random, string
-from datetime import datetime
-from colorama import Fore, Style
-from random import *
+import undetected_chromedriver as uc
+import time, os
+from colorama import Fore, Back, Style
 
-PATH = "chromedriver.exe"
+os.system("title View Bot V1 ^| Success: 0")
 
-amount = 0
-error = 0
+url = input("> Enter Video Link: ")
+views = input("> Enter Amount Of Views: "))
+delay = int(input("> Enter Watchtime: "))
 
-os.system(f"title Youtube View Bot ^| Views: {amount} ^| Errors: {error}")
+count = 0
 
-os.system("cls")
+uc.install(
+    executable_path='c:/users/user1/chromedriver.exe',
+)
 
-url = input("> Enter Video URL: ")
-count = input("> Enter View Count: ")
+print(f"""{Fore.RED}
+        _               _           _   
+ __   _(_) _____      _| |__   ___ | |_ 
+ \ \ / / |/ _ \ \ /\ / / '_ \ / _ \| __|
+  \ V /| |  __/\ V  V /| |_) | (_) | |_ 
+   \_/ |_|\___| \_/\_/ |_.__/ \___/ \__|
+                                        """)
 
-delay = int(input("> Enter Watch Time (seconds): "))
-
-driver = webdriver.Chrome(PATH)
-
-
-while count == count:
-    driver.minimize_window()
-    os.system(f"title Youtube View Bot ^| Views: {amount} ^| Errors: {error}")
+opts = uc.ChromeOptions()
+driver = uc.Chrome(options=opts)
+for i in range(views): 
+    os.system(f"title View Bot V1 ^| Success: {count}")
     driver.get(url)
     time.sleep(delay)
-    amount += 1
     driver.refresh()
+    print(f"{Fore.GREEN}Sent view!")
+    count += 1
+    
+print(f"{Fore.YELLOW}Done!")
