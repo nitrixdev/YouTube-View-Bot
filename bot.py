@@ -11,7 +11,7 @@ delay = int(input("> Enter Watchtime: "))
 count = 0
 
 uc.install(
-    executable_path='c:/users/user1/chromedriver.exe',
+    executable_path='chromedriver.exe',
 )
 
 print(f"""{Fore.RED}
